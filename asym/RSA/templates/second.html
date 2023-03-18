@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post">{%csrf_token%}
+        <p><b> Сообщение для шифрования </b></p>
+        <input type="text" size="100" name="message">
+        <p><button type="submit">Отправить</button>
+        <input type="reset" value="Очистить"></p>
+    
+
+        <p><b> Сообщение для дешифрования </b></p>
+        <input type="text2" size="100" name="message2">
+        <p><b> Ключ </b></p>
+        <input type="text2" size="100" name="key4">
+        <p><button type="submit">Отправить</button>
+        <input type="reset" value="Очистить"></p>
+
+    </form>
+
+    <div>
+        {% if start %}
+    <div>  
+        Зашифрованное сообщение: <p><output>{{start}}</output></p>  
+        Ключ открытый: <p><output>{{key}}</output></p>  
+        Ключ закрытый: <p><output>{{key2}}</output></p>  
+
+        
+        Расшифрованное сообщение: <p><output>{{encr}}</output></p>  
+    </div>  
+    {% endif%}
+    </div>
+    
+</body>
+</html>
